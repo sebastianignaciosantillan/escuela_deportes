@@ -1,0 +1,18 @@
+{% extends 'auth/layouts/base.html' %}
+
+{% block content %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    <h4>Login</h4>
+    <div>
+        <input type="text" placeholder="Nombre de usuario" id="username" name="username" />
+        <input type="password" placeholder="Password" id="password" name="password" />
+    </div>
+    <div>
+        <button type="submit">Ingresar</button>
+    </div>
+</form>
+
+<a href="{% url 'register' %}">¿No tenés cuenta? Registrate</a>
+{% endblock %}
