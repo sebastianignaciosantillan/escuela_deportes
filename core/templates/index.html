@@ -18,30 +18,29 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="menuNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Actividades</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Inscripciones</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-            
+    
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <form action="{% url 'logout' %}" method="post" style="display:inline;">
+                    <li class="nav-item d-flex align-items-center">
+                        <form action="{% url 'logout' %}" method="post" class="m-0 p-0">
                             {% csrf_token %}
-                            <button type="submit" class="nav-link btn btn-link text-white text-decoration-none" style="padding: 0;">
+                            <button type="submit"
+                                    class="btn btn-link nav-link text-white text-decoration-none m-0 p-0"
+                                    style="border: none;">
                                 <i class="fa fa-sign-out-alt"></i> Cerrar sesión
                             </button>
                         </form>
                     </li>
-                    {% else %}
-                    <li class="nav-item"><a class="nav-link" href="{% url 'login' %}"><i class="fa fa-sign-in-alt"></i> Iniciar
-                            sesión</a></li>
                     {% endif %}
                 </ul>
             </div>
-              
         </div>
     </nav>
+    
 
     <!-- CONTENIDO PRINCIPAL -->
     <header class="bg-light text-center py-5">
